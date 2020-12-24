@@ -17,6 +17,12 @@ public class InsertionSort {
         }
     }
 
+    private static <E> void swap(E[] arr, int j, int i) {
+        E temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
     // 可以通过平移来优化swap的过程
     public static <E extends Comparable<E>> void sort2(E[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -28,11 +34,5 @@ public class InsertionSort {
             }
             arr[j] = temp;
         }
-    }
-
-    private static <E> void swap(E[] arr, int j, int i) {
-        E temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
     }
 }
